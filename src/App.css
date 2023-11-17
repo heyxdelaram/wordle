@@ -83,3 +83,7 @@ nav h1 {
   display: grid;
   place-items: center;
 }
+
+#big {
+  width: 100px;
+}
