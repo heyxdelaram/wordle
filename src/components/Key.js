@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { AppContext } from "../App";
 
-function Key({ keyVal, bigKey }) {
+function Key({ keyVal, bigKey, disabled }) {
   const { onSelectLetter, onDelete, onEnter } = useContext(AppContext);
 
   // Selecting a letter from the keyboard and adding it to the board
@@ -16,7 +16,11 @@ function Key({ keyVal, bigKey }) {
   };
 
   return (
-    <div className="key" id={bigKey && "big"} onClick={selectLetter}>
+    <div
+      className="key"
+      id={bigKey ? "big" : disabled && "disabled"}
+      onClick={selectLetter}
+    >
       {keyVal}
     </div>
   );

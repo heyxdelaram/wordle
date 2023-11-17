@@ -13,6 +13,7 @@ function App() {
     letterPos: 0,
   });
   const [wordSet, setWordSet] = useState(new Set());
+  const [disabledLetters, setDisabledLetters] = useState([]);
   const correctWord = "RIGHT";
 
   // Generating the word set once the game loads
@@ -54,6 +55,8 @@ function App() {
     } else {
       alert("Word not found in the dictionary");
     }
+
+    if (currWord === correctWord) alert("You won");
   };
 
   return (
@@ -71,6 +74,8 @@ function App() {
           onDelete,
           onEnter,
           correctWord,
+          disabledLetters,
+          setDisabledLetters,
         }}
       >
         <div className="game">

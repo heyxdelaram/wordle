@@ -108,3 +108,7 @@ nav h1 {
 #error {
   background-color: gray;
 }
+
+#disabled {
+  background-color: blueviolet;
+}
