@@ -12,6 +12,14 @@ function Key({ keyVal, bigKey }) {
       if (currAttempt.letterPos !== 5) return;
 
       setCurrAttempt({ attempt: currAttempt.attempt + 1, letterPos: 0 });
+    } else if (keyVal === "←") {
+      // DELETE can't happen if we're on the column block in a row
+      if (currAttempt.letterPos === 0) return;
+
+      const newBoard = [...board];
+      newBoard[currAttempt.attempt][currAttempt.letterPos - 1] = "";
+      setBoard(newBoard);
+      setCurrAttempt({ ...currAttempt, letterPos: currAttempt.letterPos - 1 });
     } else {
       // On every attempt, only 5 letters are allowed to be added
       if (currAttempt.letterPos > 4) return;
