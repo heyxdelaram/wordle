@@ -14,6 +14,10 @@ function App() {
   });
   const [wordSet, setWordSet] = useState(new Set());
   const [disabledLetters, setDisabledLetters] = useState([]);
+  const [gameOver, setGameOver] = useState({
+    isGameOver: false,
+    foundCorrectWord: false,
+  });
   const correctWord = "RIGHT";
 
   // Generating the word set once the game loads
@@ -76,6 +80,8 @@ function App() {
           correctWord,
           disabledLetters,
           setDisabledLetters,
+          gameOver,
+          setGameOver,
         }}
       >
         <div className="game">
