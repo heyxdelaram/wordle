@@ -96,3 +96,15 @@ nav h1 {
 #big {
   width: 100px;
 }
+
+#correct {
+  background-color: green;
+}
+
+#almost {
+  background-color: yellow;
+}
+
+#error {
+  background-color: gray;
+}

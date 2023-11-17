@@ -12,6 +12,7 @@ function App() {
     attempt: 0,
     letterPos: 0,
   });
+  const correctWord = "RIGHT"
 
   /* KEYBOARD FUNCTIONALITIES */
   const onSelectLetter = (keyVal) => {
@@ -55,6 +56,7 @@ function App() {
           onSelectLetter,
           onDelete,
           onEnter,
+          correctWord
         }}
       >
         <div className="game">
