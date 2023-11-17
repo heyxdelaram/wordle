@@ -1,8 +1,8 @@
 import "./App.css";
 import Board from "./components/Board";
 import Keyboard from "./components/Keyboard";
-import { boardDefault } from "./Words";
-import { createContext, useState } from "react"; //Context API for access to board state from anywhere
+import { boardDefault, generateWordSet } from "./Words";
+import { createContext, useEffect, useState } from "react"; //Context API for access to board state from anywhere
 
 export const AppContext = createContext();
 
@@ -12,8 +12,13 @@ function App() {
     attempt: 0,
     letterPos: 0,
   });
-  const correctWord = "RIGHT"
+  const [wordSet, setWordSet] = useState(new Set());
+  const correctWord = "RIGHT";
 
+  // Generating the word set once the game loads
+  useEffect(() => {
+    generateWordSet().then((words) => setWordSet(words.wordSet));
+  }, []);
   /* KEYBOARD FUNCTIONALITIES */
   const onSelectLetter = (keyVal) => {
     // On every attempt, only 5 letters are allowed to be added
@@ -39,7 +44,16 @@ function App() {
     // ENTERing a new attempt can only happen once all the 5 letters of the current attempt have been selected
     if (currAttempt.letterPos !== 5) return;
 
-    setCurrAttempt({ attempt: currAttempt.attempt + 1, letterPos: 0 });
+    let currWord = "";
+    for (let i = 0; i < 5; i++) {
+      // Forming the currWord based on the letters of the current attempt
+      currWord += board[currAttempt.attempt][i];
+    }
+    if (wordSet.has(currWord.toLowerCase())) {
+      setCurrAttempt({ attempt: currAttempt.attempt + 1, letterPos: 0 });
+    } else {
+      alert("Word not found in the dictionary");
+    }
   };
 
   return (
@@ -56,7 +70,7 @@ function App() {
           onSelectLetter,
           onDelete,
           onEnter,
-          correctWord
+          correctWord,
         }}
       >
         <div className="game">
