@@ -52,3 +52,20 @@ nav h1 {
   display: grid;
   place-items: center;
 }
+
+.keyboard {
+  width: 700px;
+  height: 300px;
+  margin-top: 60px;
+}
+
+.line1,
+.line2,
+.line3 {
+  flex: 33%;
+  display: flex;
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+}
