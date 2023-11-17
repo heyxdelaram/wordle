@@ -22,7 +22,7 @@ function Letter({ letterPos, attemptVal }) {
 
   useEffect(() => {
     if (letter !== "" && !correct && !almost)
-      setDisabledLetters([...disabledLetters, letter]);
+      setDisabledLetters((prev) => [...prev, letter]);
   }, [currAttempt.attempt]);
   return (
     <div className="letter" id={letterState}>
