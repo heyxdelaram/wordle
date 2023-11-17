@@ -1,5 +1,6 @@
 import "./App.css";
 import Board from "./components/Board";
+import GameOver from "./components/GameOver";
 import Keyboard from "./components/Keyboard";
 import { boardDefault, generateWordSet } from "./Words";
 import { createContext, useEffect, useState } from "react"; //Context API for access to board state from anywhere
@@ -60,7 +61,14 @@ function App() {
       alert("Word not found in the dictionary");
     }
 
-    if (currWord === correctWord) alert("You won");
+    if (currWord === correctWord) {
+      setGameOver({ isGameOver: true, foundCorrectWord: true });
+      return;
+    }
+
+    if (currAttempt.attempt === 5) {
+      setGameOver({ isGameOver: true, foundCorrectWord: false });
+    }
   };
 
   return (
@@ -86,7 +94,7 @@ function App() {
       >
         <div className="game">
           <Board />
-          <Keyboard />
+          {gameOver.isGameOver ? <GameOver /> : <Keyboard />}
         </div>
       </AppContext.Provider>
     </div>
