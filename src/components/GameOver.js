@@ -6,12 +6,18 @@ function GameOver() {
   const { gameOver, correctWord, currAttempt } = useContext(AppContext);
 
   return (
-    <div className="game-ver">
-      <h3>{gameOver.foundCorrectWord ? "You Won!" : "You Lost!"}</h3>
-      <h1>Correct Word: {correctWord}</h1>
+    <div className="game-over">
+      <h3>{gameOver.foundCorrectWord ? "You Won! 🏅" : "You Lost! ☹️"}</h3>
       {gameOver.foundCorrectWord && (
-        <h3> You had {currAttempt.attempt} attempts</h3>
+        <h3>
+          with {currAttempt.attempt} attempt{currAttempt.attempt > 1 && "s"}
+        </h3>
       )}
+      <h4 style={{ color: "#538d4e" }}>Key Word: {correctWord}</h4>
+
+      <button className="play-again" onClick={(e) => window.location.reload()}>
+        Play Again
+      </button>
     </div>
   );
 }

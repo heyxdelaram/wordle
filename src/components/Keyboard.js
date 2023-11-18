@@ -2,7 +2,6 @@ import React, { useCallback, useContext, useEffect } from "react";
 import Key from "./Key";
 import { AppContext } from "../App";
 
-
 function Keyboard() {
   //States
   const { onEnter, onDelete, onSelectLetter, disabledLetters } =
