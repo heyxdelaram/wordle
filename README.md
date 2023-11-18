@@ -25,8 +25,17 @@ After each guess, letters are colored green, yellow, or gray to indicate whether
 
 3. **Repeat steps 2 and 3**: Make another guess based on the color clues from your previous guess. You have six total guesses to guess the correct word. If you don't guess the word correctly after the 6 attempts, you lose the game.☹️
 
-## Stack
-- ReactJS
-- CSS
+## Component Structure
+
+> This project was developed with `React.js`
+```
+app
+├── Nav
+├── Board
+│   └── Letter
+├── Keyboard
+│   └── Key
+
+```
 
 **Enjoy The Game!**
