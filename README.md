@@ -23,7 +23,10 @@ After each guess, letters are colored green, yellow, or gray to indicate whether
 - ⬛Gray: This letter is not in the word at all.
   The on-screen keyboard will also color wrong the letters.
 
-3. **Repeat steps 2 and 3**: Make another guess based on the color clues from your previous guess. You have six total guesses to guess the correct word.
-   If you don't guess the word correctly after the 6 attempts, you lose the game.☹️
+3. **Repeat steps 2 and 3**: Make another guess based on the color clues from your previous guess. You have six total guesses to guess the correct word. If you don't guess the word correctly after the 6 attempts, you lose the game.☹️
 
-**Enjoy!**
+## Stack
+- ReactJS
+- CSS
+
+**Enjoy The Game!**
