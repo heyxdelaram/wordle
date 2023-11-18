@@ -45,7 +45,7 @@ nav h1 {
 }
 
 .board {
-  width: 17rem;
+  width: 20rem;
   height: 22rem;
   display: flex;
   flex-direction: column;
@@ -55,20 +55,19 @@ nav h1 {
   flex: 1;
   display: flex;
   flex-direction: row;
-  margin: 5px;
+  margin: 2px;
 }
 
 .letter {
-  width: 33%;
+  width: 100%;
   height: 100%;
-  border: 1px solid gray;
-  margin: 5px;
-  font-size: 30px;
+  border: 2px solid #3a3a3c;
+  font-size: 2rem;
   font-weight: bolder;
   color: white;
   display: grid;
   place-items: center;
-  border-radius: 3px;
+  margin: 2px;
 }
 
 .keyboard {
@@ -85,7 +84,7 @@ nav h1 {
   flex-direction: row;
   display: flex;
   justify-content: center;
-  margin: 5px;
+  margin: 1px;
 }
 
 .key {
@@ -118,14 +117,17 @@ nav h1 {
 
 #correct {
   background-color: #538d4e;
+  border: none;
 }
 
 #almost {
   background-color: #b59f3b;
+  border: none;
 }
 
 #error {
   background-color: #3a3a3c;
+  border: none;
 }
 
 #disabled {
@@ -155,4 +157,8 @@ nav h1 {
 .play-again:active {
   background-color: #1d832a;
   transform: scale(0.95);
+}
+
+.key:hover {
+  background-color: #3a3a3c;
 }
