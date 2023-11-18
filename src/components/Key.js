@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { AppContext } from "../App";
 
 function Key({ keyVal, bigKey, disabled }) {
+  // States
   const { onSelectLetter, onDelete, onEnter } = useContext(AppContext);
 
   // Selecting a letter from the keyboard and adding it to the board
@@ -11,6 +12,7 @@ function Key({ keyVal, bigKey, disabled }) {
     } else if (keyVal === "←") {
       onDelete(keyVal);
     } else {
+      // Any alphabetic key
       onSelectLetter(keyVal);
     }
   };

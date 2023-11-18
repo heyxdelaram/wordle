@@ -1,8 +1,6 @@
 import wordBank from "./wordle-bank.txt";
 
-//every word can be represented as an array of characters
-//like a matrix
-
+// Every word can be represented as an array of characters
 export const boardDefault = [
   ["", "", "", "", ""],
   ["", "", "", "", ""],
@@ -12,6 +10,7 @@ export const boardDefault = [
   ["", "", "", "", ""],
 ];
 
+/* GENERATING WORD DICTIONARY for VALIDITY CHECK */
 export const generateWordSet = async () => {
   // Array.includes() is not efficient in terms of time and memory complexity
   // Instead, Sets have a one time lookup, therefore we will read the txt file and transform it into a Set

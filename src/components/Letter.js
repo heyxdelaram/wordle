@@ -1,16 +1,19 @@
 import React, { useContext, useEffect } from "react";
 import { AppContext } from "../App";
+
 function Letter({ letterPos, attemptVal }) {
+  // States
   const { board, correctWord, currAttempt, setDisabledLetters } =
     useContext(AppContext);
   const letter = board[attemptVal][letterPos];
 
-  // Correct letter position
+  // Check if letter is in the CORRECT POSITION
   const correct = correctWord[letterPos] === letter;
 
-  // Correct letter included
+  // Check if the letter exists in the key word
   const almost = !correct && letter !== "" && correctWord.includes(letter);
 
+  // Defining the state of the letter
   const letterState =
     currAttempt.attempt > attemptVal &&
     (correct ? "correct" : almost ? "almost" : "error");
