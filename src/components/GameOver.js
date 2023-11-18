@@ -1,9 +1,21 @@
-import React, { useContext } from "react";
+import React, { useCallback, useContext, useEffect } from "react";
 import { AppContext } from "../App";
 
 function GameOver() {
   // States
   const { gameOver, correctWord, currAttempt } = useContext(AppContext);
+
+  const handleEnter = useCallback((e) => window.location.reload());
+
+  // Listenig for key press events
+  useEffect(() => {
+    document.addEventListener("keydown", handleEnter);
+
+    // Cleaning up
+    return () => {
+      document.removeEventListener("keydown", handleEnter);
+    };
+  }, [handleEnter]);
 
   return (
     <div className="game-over">
